@@ -4,8 +4,8 @@
   "description": "Curso NodeJS com TDD",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "test:staged": "jest",
+    "test": "jest --passWithNoTests",
+    "test:staged": "jest --passWithNoTests",
     "prepare": "husky install"
   },
   "keywords": [],
