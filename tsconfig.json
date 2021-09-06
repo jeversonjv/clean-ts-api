@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",// onde quer gerar o código em JS
+    "module": "CommonJS", // para usar import e export e quando compilar vai gerar com require
+    "target": "ES2019", // gerar no padrão do ES2019
+    "esModuleInterop": true, // modules que usam o commonJS, se usar o import converte automatico
+    "allowJs": true,
+    "strictNullChecks": true
+  }
+}
