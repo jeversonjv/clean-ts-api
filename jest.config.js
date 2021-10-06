@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   collectCoverage: false,
   collectCoverageFrom: [
     '<rootDir>/src/**/*.ts',
