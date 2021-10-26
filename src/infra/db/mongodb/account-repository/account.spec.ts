@@ -10,15 +10,18 @@ describe('Account Mongo Repository', () => {
     await MongoHelper.disconnect()
   })
 
+  const makeSut = (): AccountMongoRepository => {
+    return new AccountMongoRepository()
+  }
+
   test('Should return an account on success', async () => {
-    const sut = new AccountMongoRepository()
+    const sut = makeSut()
     const account = await sut.add({
       name: 'any_name',
       email: 'any_mail@mail.com',
       password: 'any_password'
     })
     expect(account).toBeTruthy()
-    console.log('🚀 ~ file: account.spec.ts ~ line 21 ~ test ~ account', account)
     expect(account.id).toBeTruthy()
     expect(account.name).toBe('any_name')
     expect(account.email).toBe('any_mail@mail.com')
