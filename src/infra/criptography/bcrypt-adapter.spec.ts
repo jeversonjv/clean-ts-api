@@ -4,8 +4,7 @@ import { BcryptAdapter } from './bcrypt-adapter'
 const salt = 12
 
 const makeSut = (): BcryptAdapter => {
-  const sut = new BcryptAdapter(salt)
-  return sut
+  return new BcryptAdapter(salt)
 }
 
 describe('Bcrypt Adapter', () => {
