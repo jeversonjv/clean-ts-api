@@ -1,5 +1,5 @@
 import { CompareFieldsValidation } from '../../presentation/helpers/validators/compare-fields-validation'
-import { RequiredFieldValidation } from '../../presentation/helpers/validators/required-fields-validaiton'
+import { RequiredFieldValidation } from '../../presentation/helpers/validators/required-fields-validation'
 import { Validation } from '../../presentation/helpers/validators/validation'
 import { ValidationComposite } from '../../presentation/helpers/validators/validation-composite'
 import { makeSignUpValidation } from './signup-validation'
