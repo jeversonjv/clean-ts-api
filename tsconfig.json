@@ -4,7 +4,7 @@
     "module": "CommonJS", // para usar import e export e quando compilar vai gerar com require
     "target": "ES2019", // gerar no padrão do ES2019
     "esModuleInterop": true, // modules que usam o commonJS, se usar o import converte automatico
-    "strictNullChecks": true,
+    "strictNullChecks": false,
     "sourceMap": true, // cria um arquivo .map e mostra qual arquivo ts corresponde ao js, util para debbug
     "rootDir": "src"
   },
