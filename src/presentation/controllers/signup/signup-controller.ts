@@ -18,7 +18,7 @@ export class SignUpController implements Controller {
   constructor(
     private readonly addAccount: AddAccount,
     private readonly validation: Validation,
-    private readonly authentication?: Authentication
+    private readonly authentication: Authentication
   ) {}
 
   async handle(httpRequest: HttpRequest): Promise<HttpResponse> {
@@ -38,7 +38,7 @@ export class SignUpController implements Controller {
         return forbidden(new EmailInUseError())
       }
 
-      const accessToken = await this.authentication?.auth({
+      const accessToken = await this.authentication.auth({
         email,
         password
       })
