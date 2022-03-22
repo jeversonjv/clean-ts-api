@@ -5,7 +5,8 @@
     "target": "ES2019", // gerar no padrão do ES2019
     "esModuleInterop": true, // modules que usam o commonJS, se usar o import converte automatico
     "strictNullChecks": true,
-    "sourceMap": true // cria um arquivo .map e mostra qual arquivo ts corresponde ao js, util para debbug
+    "sourceMap": true, // cria um arquivo .map e mostra qual arquivo ts corresponde ao js, util para debbug
+    "rootDir": "src"
   },
   "include": [
     "src"
