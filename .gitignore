@@ -5,4 +5,5 @@ diagrams
 globalConfig.json
 .env
 data
+!src/data
 .vscode
