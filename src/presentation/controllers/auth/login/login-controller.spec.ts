@@ -4,14 +4,14 @@ import {
   ok,
   serverError,
   unauthorized
-} from '../../helpers/http/http-helper'
-import { MissingParamError } from '../../errors'
+} from '../../../helpers/http/http-helper'
+import { MissingParamError } from '../../../errors'
 import {
   HttpRequest,
   Authentication,
   Validation,
   AuthenticationModel
-} from './login-controller-protocols'
+} from '../login/login-controller-protocols'
 
 interface SutTypes {
   sut: LoginController
