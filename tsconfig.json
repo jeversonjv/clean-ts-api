@@ -6,13 +6,14 @@
     "esModuleInterop": true, // modules que usam o commonJS, se usar o import converte automatico
     "strictNullChecks": false,
     "sourceMap": true, // cria um arquivo .map e mostra qual arquivo ts corresponde ao js, util para debbug
-    "rootDir": "src"
+    "rootDir": "src",
+    "baseUrl": "src",
+    "paths": {
+      "@/*" : ["*"]
+    }
   },
   "include": [
     "src"
   ],
-  "exclude": [
-    "**/*.spec.ts",
-    "**/*.test.ts",
-  ]
+  "exclude": []
 }
