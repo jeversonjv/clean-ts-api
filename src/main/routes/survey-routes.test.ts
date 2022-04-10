@@ -21,6 +21,29 @@ const makeFakeBodyRequest = (): any => ({
   ]
 })
 
+const makeAccessToken = async (role?: string): Promise<string> => {
+  const res = await accountCollection.insertOne({
+    name: 'Jeverson',
+    email: 'jeversontp@gmail.com',
+    password: 'any_password',
+    role
+  })
+
+  const id = res.insertedId
+  const accessToken = sign({ id }, env.jwtSecret)
+
+  await accountCollection.updateOne(
+    { _id: id },
+    {
+      $set: {
+        accessToken
+      }
+    }
+  )
+
+  return accessToken
+}
+
 describe('Survey Routes', () => {
   beforeAll(async () => {
     await MongoHelper.connect(process.env.MONGO_URL)
@@ -48,28 +71,9 @@ describe('Survey Routes', () => {
     })
 
     test('Should return 204 on add survey with valid token', async () => {
-      const res = await accountCollection.insertOne({
-        name: 'Jeverson',
-        email: 'jeversontp@gmail.com',
-        password: 'any_password',
-        role: 'admin'
-      })
-
-      const id = res.insertedId
-      const accessToken = sign({ id }, env.jwtSecret)
-
-      await accountCollection.updateOne(
-        { _id: id },
-        {
-          $set: {
-            accessToken
-          }
-        }
-      )
-
       await request(app)
         .post('/api/surveys')
-        .set('x-access-token', accessToken)
+        .set('x-access-token', await makeAccessToken('admin'))
         .send(makeFakeBodyRequest())
         .expect(204)
     })
@@ -81,27 +85,9 @@ describe('Survey Routes', () => {
     })
 
     test('Should return 204 on load surveys with valid accessToken', async () => {
-      const res = await accountCollection.insertOne({
-        name: 'Jeverson',
-        email: 'jeversontp@gmail.com',
-        password: 'any_password'
-      })
-
-      const id = res.insertedId
-      const accessToken = sign({ id }, env.jwtSecret)
-
-      await accountCollection.updateOne(
-        { _id: id },
-        {
-          $set: {
-            accessToken
-          }
-        }
-      )
-
       await request(app)
         .get('/api/surveys')
-        .set('x-access-token', accessToken)
+        .set('x-access-token', await makeAccessToken())
         .send(makeFakeBodyRequest())
         .expect(204)
     })
