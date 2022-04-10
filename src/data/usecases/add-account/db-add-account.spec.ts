@@ -8,7 +8,7 @@ import {
 
 import { DbAddAccount } from './db-add-account'
 
-interface SutTypes {
+type SutTypes = {
   sut: DbAddAccount
   encrypterStub: Hasher
   addAccountRepositoryStub: AddAccountRepository
