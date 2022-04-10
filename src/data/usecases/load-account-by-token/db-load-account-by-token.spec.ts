@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/brace-style */
-/* eslint-disable @typescript-eslint/indent */
 import { DbLoadAccountByToken } from './db-load-account-by-token'
 import {
   AccountModel,

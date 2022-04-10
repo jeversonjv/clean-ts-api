@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/brace-style */
-/* eslint-disable @typescript-eslint/indent */
 import {
   AddAccountModel,
   AccountModel,

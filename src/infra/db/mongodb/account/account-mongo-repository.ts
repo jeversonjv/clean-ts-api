@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/brace-style */
-/* eslint-disable @typescript-eslint/indent */
 import { ObjectId } from 'mongodb'
 import { AddAccountRepository } from '../../../../data/protocols/db/account/add-account-repository'
 import { LoadAccountByEmailRepository } from '../../../../data/protocols/db/account/load-account-by-email-repository'
