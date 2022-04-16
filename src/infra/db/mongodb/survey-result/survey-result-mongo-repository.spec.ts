@@ -6,7 +6,8 @@ let surveyCollection: Collection
 let surveyResultCollection: Collection
 let accountCollection: Collection
 
-const correctAnswer = 'any_answer'
+const firstAnswer = 'any_answer'
+const secondAnswer = 'other_answer'
 
 const makeSut = (): SurveyResultMongoRepository => {
   return new SurveyResultMongoRepository()
@@ -18,10 +19,10 @@ const makeSurvey = async (): Promise<string> => {
     answers: [
       {
         image: 'any_image',
-        answer: correctAnswer
+        answer: firstAnswer
       },
       {
-        answer: 'other_answer'
+        answer: secondAnswer
       }
     ],
     date: new Date()
@@ -72,13 +73,40 @@ describe('Survey Mongo Repository', () => {
       const surveyResult = await sut.save({
         surveyId,
         accountId,
-        answer: correctAnswer,
+        answer: firstAnswer,
         date: new Date()
       })
 
       expect(surveyResult).toBeTruthy()
       expect(surveyResult.id).toBeTruthy()
-      expect(surveyResult.answer).toBe(correctAnswer)
+      expect(surveyResult.answer).toBe(firstAnswer)
+    })
+
+    test('Should update survey result if its not new', async () => {
+      const sut = makeSut()
+
+      const [surveyId, accountId] = await Promise.all([
+        makeSurvey(),
+        makeAccount()
+      ])
+
+      const res = await surveyResultCollection.insertOne({
+        surveyId,
+        accountId,
+        answer: firstAnswer,
+        date: new Date()
+      })
+
+      const surveyResult = await sut.save({
+        surveyId,
+        accountId,
+        answer: secondAnswer,
+        date: new Date()
+      })
+
+      expect(surveyResult).toBeTruthy()
+      expect(surveyResult.id).toBe(res.insertedId.toString())
+      expect(surveyResult.answer).toBe(secondAnswer)
     })
   })
 })
