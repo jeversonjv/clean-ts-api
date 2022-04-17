@@ -2,13 +2,12 @@ import request from 'supertest'
 import app from '@/main/config/app'
 import { MongoHelper } from '@/infra/db/mongodb/helpers/mongo-helper'
 import { Collection } from 'mongodb'
-// import { sign } from 'jsonwebtoken'
-// import env from '@/main/config/env'
+import { sign } from 'jsonwebtoken'
+import env from '@/main/config/env'
 
 let surveyCollection: Collection
 let accountCollection: Collection
 
-/*
 const makeFakeBodyRequest = (): any => ({
   question: 'any_question',
   answers: [
@@ -43,7 +42,7 @@ const makeAccessToken = async (role?: string): Promise<string> => {
   )
 
   return accessToken
-} */
+}
 
 describe('Survey Routes', () => {
   beforeAll(async () => {
@@ -71,6 +70,20 @@ describe('Survey Routes', () => {
           answer: 'any_answer'
         })
         .expect(403)
+    })
+
+    test('Should return 200 on save survey result with access token', async () => {
+      const res = await surveyCollection.insertOne(makeFakeBodyRequest())
+
+      const accessToken = await makeAccessToken()
+
+      await request(app)
+        .put(`/api/surveys/${res.insertedId.toString()}/results`)
+        .set('x-access-token', accessToken)
+        .send({
+          answer: 'any_answer'
+        })
+        .expect(200)
     })
   })
 })
