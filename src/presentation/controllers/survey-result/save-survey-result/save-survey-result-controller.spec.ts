@@ -14,6 +14,7 @@ import {
   SurveyResultModel
 } from './save-survey-result-controller-protocols'
 import MockDate from 'mockdate'
+import { throwError } from '@/domain/test/index'
 
 const makeFakeRequest = (): HttpRequest => ({
   params: {
@@ -110,7 +111,7 @@ describe('SaveSurveyResultController', () => {
     const { sut, loadSurveyByIdStub } = makeSut()
     jest
       .spyOn(loadSurveyByIdStub, 'loadById')
-      .mockRejectedValueOnce(new Error())
+      .mockImplementationOnce(throwError)
     const httpResponse = await sut.handle(makeFakeRequest())
     expect(httpResponse).toEqual(serverError(new Error()))
   })
@@ -142,7 +143,7 @@ describe('SaveSurveyResultController', () => {
 
   test('Should return 500 if SaveSurveyResult throws', async () => {
     const { sut, saveSurveyResultStub } = makeSut()
-    jest.spyOn(saveSurveyResultStub, 'save').mockRejectedValueOnce(new Error())
+    jest.spyOn(saveSurveyResultStub, 'save').mockImplementationOnce(throwError)
     const httpResponse = await sut.handle(makeFakeRequest())
     expect(httpResponse).toEqual(serverError(new Error()))
   })

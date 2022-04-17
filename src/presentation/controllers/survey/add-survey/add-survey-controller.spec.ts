@@ -11,6 +11,7 @@ import {
   serverError
 } from '@/presentation/helpers/http/http-helper'
 import MockDate from 'mockdate'
+import { throwError } from '@/domain/test/index'
 
 type SutTypes = {
   sut: AddSurveyController
@@ -97,7 +98,7 @@ describe('AddSurvey Controller', () => {
 
   test('Should return 500 if AddSurvey throws', async () => {
     const { sut, addSurveyStub } = makeSut()
-    jest.spyOn(addSurveyStub, 'add').mockRejectedValueOnce(new Error())
+    jest.spyOn(addSurveyStub, 'add').mockImplementationOnce(throwError)
 
     const httpResponse = await sut.handle(makeFakeRequest())
 

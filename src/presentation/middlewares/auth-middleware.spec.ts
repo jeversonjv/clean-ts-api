@@ -10,6 +10,7 @@ import {
   AccountModel,
   HttpRequest
 } from './auth-middleware-protocols'
+import { throwError } from '@/domain/test/index'
 
 type SutTypes = {
   sut: AuthMiddleware
@@ -81,7 +82,7 @@ describe('Auth Middleware', () => {
     const { sut, loadAccountByTokenStub } = makeSut()
     jest
       .spyOn(loadAccountByTokenStub, 'load')
-      .mockRejectedValueOnce(new Error())
+      .mockImplementationOnce(throwError)
     const httpResponse = await sut.handle(makeFakeRequest())
     expect(httpResponse).toEqual(serverError(new Error()))
   })
