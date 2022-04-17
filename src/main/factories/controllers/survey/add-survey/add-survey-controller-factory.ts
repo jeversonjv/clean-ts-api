@@ -5,9 +5,9 @@ import { AddSurveyController } from '@/presentation/controllers/survey/add-surve
 import { makeDbAddSurvey } from '@/main/factories/usecases/survey/add-survey/db-add-account-factory'
 
 export const makeAddSurveyController = (): Controller => {
-  const loginController = new AddSurveyController(
+  const controller = new AddSurveyController(
     makeAddSurveyValidation(),
     makeDbAddSurvey()
   )
-  return makeLogControllerDecorator(loginController)
+  return makeLogControllerDecorator(controller)
 }
