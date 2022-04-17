@@ -1,5 +1,5 @@
 import {
-  SaveSurveyResultModel,
+  SaveSurveyResultParams,
   SurveyResultModel,
   SaveSurveyResult,
   SaveSurveyResultRepository
@@ -10,7 +10,7 @@ export class DbSaveSurveyResult implements SaveSurveyResult {
     private readonly saveSurveyResultRepository: SaveSurveyResultRepository
   ) {}
 
-  async save(data: SaveSurveyResultModel): Promise<SurveyResultModel> {
+  async save(data: SaveSurveyResultParams): Promise<SurveyResultModel> {
     return this.saveSurveyResultRepository.save(data)
   }
 }

@@ -3,11 +3,11 @@ import { EmailInUseError, MissingParamError } from '@/presentation/errors'
 import { AddAccount } from '@/domain/usecases/account/add-account'
 import {
   AccountModel,
-  AddAccountModel,
+  AddAccountParams,
   HttpRequest,
   Validation,
   Authentication,
-  AuthenticationModel
+  AuthenticationParams
 } from '@/presentation/controllers/auth/signup/signup-controller-protocols'
 import {
   ok,
@@ -25,7 +25,7 @@ type SutTypes = {
 
 const makeAddAccount = (): AddAccount => {
   class AddAccountStub implements AddAccount {
-    async add(account: AddAccountModel): Promise<AccountModel> {
+    async add(account: AddAccountParams): Promise<AccountModel> {
       return Promise.resolve(makeFakeAccount())
     }
   }
@@ -78,7 +78,7 @@ const makeFakeRequest = (): HttpRequest => ({
 
 const makeAuthentication = (): Authentication => {
   class AuthenticationStub implements Authentication {
-    async auth(authentication: AuthenticationModel): Promise<string | null> {
+    async auth(authentication: AuthenticationParams): Promise<string | null> {
       return 'any_token'
     }
   }
