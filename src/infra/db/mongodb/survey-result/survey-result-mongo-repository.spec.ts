@@ -1,6 +1,7 @@
 import { Collection } from 'mongodb'
 import { MongoHelper } from '@/infra/db/mongodb/helpers/mongo-helper'
 import { SurveyResultMongoRepository } from './survey-result-mongo-repository'
+import { mockAccountModel } from '@/domain/test'
 
 let surveyCollection: Collection
 let surveyResultCollection: Collection
@@ -32,11 +33,7 @@ const makeSurvey = async (): Promise<string> => {
 }
 
 const makeAccount = async (): Promise<string> => {
-  const res = await accountCollection.insertOne({
-    name: 'any_name',
-    email: 'any_email',
-    password: 'any_password'
-  })
+  const res = await accountCollection.insertOne(mockAccountModel())
 
   return res.insertedId.toString()
 }
