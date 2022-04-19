@@ -1,6 +1,6 @@
-import { loginPath } from './paths/login-path'
-import { accountSchema } from './schemas/account-schema'
-import { loginParamsSchema } from './schemas/login-params-schema'
+import { badRequest, serverError, unauthorized, notFound } from './components'
+import { loginPath } from './paths'
+import { errorSchema, accountSchema, loginParamsSchema } from './schemas'
 
 export default {
   openapi: '3.0.0',
@@ -9,6 +9,10 @@ export default {
     description:
       'API do curso do Mango para realizar enquetes entre programadores',
     version: '1.0.0'
+  },
+  license: {
+    name: 'ISC',
+    url: 'https://www.isc.org/licenses/'
   },
   servers: [
     {
@@ -25,6 +29,13 @@ export default {
   },
   schemas: {
     account: accountSchema,
-    loginParams: loginParamsSchema
+    loginParams: loginParamsSchema,
+    error: errorSchema
+  },
+  components: {
+    badRequest,
+    serverError,
+    unauthorized,
+    notFound
   }
 }
