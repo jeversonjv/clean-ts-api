@@ -1,4 +1,4 @@
-import { Collection } from 'mongodb'
+import { Collection, ObjectId } from 'mongodb'
 import { MongoHelper } from '@/infra/db/mongodb/helpers/mongo-helper'
 import { SurveyResultMongoRepository } from './survey-result-mongo-repository'
 import { mockAccountModel } from '@/domain/test'
@@ -75,8 +75,8 @@ describe('Survey Mongo Repository', () => {
       })
 
       expect(surveyResult).toBeTruthy()
-      expect(surveyResult.id).toBeTruthy()
-      expect(surveyResult.answer).toBe(firstAnswer)
+      expect(surveyResult.answers[0].answer).toBe(firstAnswer)
+      expect(surveyResult.answers[0].count).toBe(1)
     })
 
     test('Should update survey result if its not new', async () => {
@@ -87,9 +87,9 @@ describe('Survey Mongo Repository', () => {
         makeAccount()
       ])
 
-      const res = await surveyResultCollection.insertOne({
-        surveyId,
-        accountId,
+      await surveyResultCollection.insertOne({
+        surveyId: new ObjectId(surveyId),
+        accountId: new ObjectId(accountId),
         answer: firstAnswer,
         date: new Date()
       })
@@ -102,8 +102,8 @@ describe('Survey Mongo Repository', () => {
       })
 
       expect(surveyResult).toBeTruthy()
-      expect(surveyResult.id).toBe(res.insertedId.toString())
-      expect(surveyResult.answer).toBe(secondAnswer)
+      expect(surveyResult.answers[0].answer).toBe(secondAnswer)
+      expect(surveyResult.answers[0].count).toBe(1)
     })
   })
 })

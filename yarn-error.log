@@ -1,8 +1,8 @@
 Arguments: 
-  /home/usemobile/.nvm/versions/node/v14.19.1/bin/node /mnt/c/Users/usemobile/AppData/Roaming/npm/node_modules/yarn/bin/yarn.js build
+  /home/usemobile/.nvm/versions/node/v14.19.1/bin/node /mnt/c/Users/usemobile/AppData/Roaming/npm/node_modules/yarn/bin/yarn.js add -D @types/mongo-round
 
 PATH: 
-  /home/usemobile/.vscode-server/bin/c722ca6c7eed3d7987c0d5c3df5c45f6b15e77d1/bin/remote-cli:/home/usemobile/.nvm/versions/node/v14.19.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Python310/Scripts/:/mnt/c/Python310/:/mnt/c/Program Files/AdoptOpenJDK/jre-8.0.282.8-hotspot/bin:/mnt/c/Program Files/AdoptOpenJDK/jre-11.0.10.9-hotspot/bin:/mnt/c/Program Files (x86)/AdoptOpenJDK/jre-8.0.282.8-hotspot/bin:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files/PuTTY/:/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/Program Files/nodejs/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/Microsoft SQL Server/150/DTS/Binn/:/mnt/c/Program Files/Azure Data Studio/bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Program Files/Go/bin:/mnt/c/Users/usemobile/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/usemobile/AppData/Roaming/npm:/mnt/c/Program Files/Azure Data Studio/bin:/mnt/c/Users/usemobile/go/bin:/snap/bin:/usr/local/go-1.18/bin:/home/usemobile/projects/go/bin:/usr/local/go-1.18/bin:/home/usemobile/projects/go/bin
+  /home/usemobile/.vscode-server/bin/dfd34e8260c270da74b5c2d86d61aee4b6d56977/bin/remote-cli:/home/usemobile/.nvm/versions/node/v14.19.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Python310/Scripts/:/mnt/c/Python310/:/mnt/c/Program Files/AdoptOpenJDK/jre-8.0.282.8-hotspot/bin:/mnt/c/Program Files/AdoptOpenJDK/jre-11.0.10.9-hotspot/bin:/mnt/c/Program Files (x86)/AdoptOpenJDK/jre-8.0.282.8-hotspot/bin:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files/PuTTY/:/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/Program Files/nodejs/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/Microsoft SQL Server/150/DTS/Binn/:/mnt/c/Program Files/Azure Data Studio/bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Program Files/Go/bin:/mnt/c/Users/usemobile/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/usemobile/AppData/Roaming/npm:/mnt/c/Program Files/Azure Data Studio/bin:/mnt/c/Users/usemobile/go/bin:/snap/bin:/usr/local/go-1.18/bin:/home/usemobile/projects/go/bin:/usr/local/go-1.18/bin:/home/usemobile/projects/go/bin
 
 Yarn version: 
   1.22.17
@@ -14,21 +14,27 @@ Platform:
   linux x64
 
 Trace: 
-  SyntaxError: /home/usemobile/projetos/clean-ts-api/package.json: Unexpected token } in JSON at position 2180
-      at JSON.parse (<anonymous>)
-      at /mnt/c/Users/usemobile/AppData/Roaming/npm/node_modules/yarn/lib/cli.js:1625:59
-      at Generator.next (<anonymous>)
-      at step (/mnt/c/Users/usemobile/AppData/Roaming/npm/node_modules/yarn/lib/cli.js:310:30)
-      at /mnt/c/Users/usemobile/AppData/Roaming/npm/node_modules/yarn/lib/cli.js:321:13
+  Error: https://registry.yarnpkg.com/@types%2fmongo-round: Not found
+      at Request.params.callback [as _callback] (/mnt/c/Users/usemobile/AppData/Roaming/npm/node_modules/yarn/lib/cli.js:67029:18)
+      at Request.self.callback (/mnt/c/Users/usemobile/AppData/Roaming/npm/node_modules/yarn/lib/cli.js:140883:22)
+      at Request.emit (events.js:400:28)
+      at Request.<anonymous> (/mnt/c/Users/usemobile/AppData/Roaming/npm/node_modules/yarn/lib/cli.js:141855:10)
+      at Request.emit (events.js:400:28)
+      at IncomingMessage.<anonymous> (/mnt/c/Users/usemobile/AppData/Roaming/npm/node_modules/yarn/lib/cli.js:141777:12)
+      at Object.onceWrapper (events.js:519:28)
+      at IncomingMessage.emit (events.js:412:35)
+      at endReadableNT (internal/streams/readable.js:1334:12)
+      at processTicksAndRejections (internal/process/task_queues.js:82:21)
 
 npm manifest: 
   {
     "name": "clean-ts-api",
-    "version": "1.4.0",
+    "version": "2.3.0",
     "description": "Curso NodeJS com TDD",
     "main": "index.js",
     "scripts": {
       "start": "node dist/main/server.js",
+      "start:dev": "ts-node-dev --respawn --transpile-only src/main/server.ts",
       "build": "rimraf dist && tsc -p tsconfig-build.json",
       "debug": "nodemon -L --watch ./dist --inspect=0.0.0.0:9222 --nolazy ./dist/main/server.js",
       "debug:watch": "tsc -w",
@@ -55,6 +61,7 @@ npm manifest:
       "@types/mongodb": "^4.0.7",
       "@types/node": "^16.7.10",
       "@types/supertest": "^2.0.11",
+      "@types/swagger-ui-express": "^4.1.3",
       "@types/validator": "^13.6.3",
       "@typescript-eslint/eslint-plugin": "^4.0.1",
       "coveralls": "^3.1.1",
@@ -72,6 +79,7 @@ npm manifest:
       "supertest": "^6.1.6",
       "ts-jest": "^27.0.5",
       "ts-node": "^10.2.1",
+      "ts-node-dev": "^1.1.8",
       "typescript": "^4.4.2"
     },
     "dependencies": {
@@ -80,15 +88,17 @@ npm manifest:
       "express": "^4.17.1",
       "jsonwebtoken": "^8.5.1",
       "module-alias": "^2.2.2",
+      "mongo-round": "^1.0.0",
       "mongodb": "^4.1.3",
       "nodemon": "^2.0.15",
+      "swagger-ui-express": "^4.3.0",
       "validator": "^13.6.0"
     },
     "engines": {
       "node": "14.x"
     },
     "_moduleAliases": {
-      "@"      : "dist",
+      "@": "dist"
     }
   }
 
@@ -814,7 +824,7 @@ Lockfile:
       "@types/qs" "*"
       "@types/range-parser" "*"
   
-  "@types/express@^4.17.13":
+  "@types/express@*", "@types/express@^4.17.13":
     version "4.17.13"
     resolved "https://registry.yarnpkg.com/@types/express/-/express-4.17.13.tgz#a76e2995728999bab51a33fabce1d705a3709034"
     integrity sha512-6bSZTPaTIACxn48l50SR+axgrqm6qXFIxrdAKaG6PaJk3+zuUr35hBlgT7vOmJcum+OEaIBLtHV/qloEAFITeA==
@@ -938,6 +948,16 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-2.0.1.tgz#20f18294f797f2209b5f65c8e3b5c8e8261d127c"
     integrity sha512-Hl219/BT5fLAaz6NDkSuhzasy49dwQS/DSdu4MdggFB8zcXv7vflBI3xp7FEmkmdDkBUI2bPUNeMttp2knYdxw==
   
+  "@types/strip-bom@^3.0.0":
+    version "3.0.0"
+    resolved "https://registry.yarnpkg.com/@types/strip-bom/-/strip-bom-3.0.0.tgz#14a8ec3956c2e81edb7520790aecf21c290aebd2"
+    integrity sha1-FKjsOVbC6B7bdSB5CuzyHCkK69I=
+  
+  "@types/strip-json-comments@0.0.30":
+    version "0.0.30"
+    resolved "https://registry.yarnpkg.com/@types/strip-json-comments/-/strip-json-comments-0.0.30.tgz#9aa30c04db212a9a0649d6ae6fd50accc40748a1"
+    integrity sha512-7NQmHra/JILCd1QqpSzl8+mJRc8ZHz3uDm8YV1Ks9IhK0epEiTw8aIErbvH9PI+6XbqhyIQy3462nEsn7UVzjQ==
+  
   "@types/superagent@*":
     version "4.1.15"
     resolved "https://registry.yarnpkg.com/@types/superagent/-/superagent-4.1.15.tgz#63297de457eba5e2bc502a7609426c4cceab434a"
@@ -952,6 +972,14 @@ Lockfile:
     integrity sha512-X3HPWTwXRerBZS7Mo1k6vMVR1Z6zmJcDVn5O/31whe0tnjE4te6ZJSJGq1RiqHPjzPdMTfjCFogDJmwng9xHaQ==
     dependencies:
       "@types/superagent" "*"
+  
+  "@types/swagger-ui-express@^4.1.3":
+    version "4.1.3"
+    resolved "https://registry.yarnpkg.com/@types/swagger-ui-express/-/swagger-ui-express-4.1.3.tgz#7adbbbf5343b45869debef1e9ff39c9ba73e380f"
+    integrity sha512-jqCjGU/tGEaqIplPy3WyQg+Nrp6y80DCFnDEAvVKWkJyv0VivSSDCChkppHRHAablvInZe6pijDFMnavtN0vqA==
+    dependencies:
+      "@types/express" "*"
+      "@types/serve-static" "*"
   
   "@types/tmp@^0.2.2":
     version "0.2.3"
@@ -1585,7 +1613,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/char-regex/-/char-regex-1.0.2.tgz#d744358226217f981ed58f479b1d6bcc29545dcf"
     integrity sha512-kWWXztvZ5SBQV+eRgKFeh8q5sLuZY2+8WUIzlxWVTg+oGwY14qylx1KbKzHd8P6ZYkAg0xyIDU9JMHhyJMZ1jw==
   
-  chokidar@^3.5.2:
+  chokidar@^3.5.1, chokidar@^3.5.2:
     version "3.5.3"
     resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.5.3.tgz#1cf37c8707b932bd1af1ae22c0432e2acd1903bd"
     integrity sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==
@@ -2061,6 +2089,13 @@ Lockfile:
     version "0.1.4"
     resolved "https://registry.yarnpkg.com/duplexer3/-/duplexer3-0.1.4.tgz#ee01dd1cac0ed3cbc7fdbea37dc0a8f1ce002ce2"
     integrity sha1-7gHdHKwO08vH/b6jfcCo8c4ALOI=
+  
+  dynamic-dedupe@^0.3.0:
+    version "0.3.0"
+    resolved "https://registry.yarnpkg.com/dynamic-dedupe/-/dynamic-dedupe-0.3.0.tgz#06e44c223f5e4e94d78ef9db23a6515ce2f962a1"
+    integrity sha1-BuRMIj9eTpTXjvnbI6ZRXOL5YqE=
+    dependencies:
+      xtend "^4.0.0"
   
   ecc-jsbn@~0.1.1:
     version "0.1.2"
@@ -4201,6 +4236,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/module-alias/-/module-alias-2.2.2.tgz#151cdcecc24e25739ff0aa6e51e1c5716974c0e0"
     integrity sha512-A/78XjoX2EmNvppVWEhM2oGk3x4lLxnkEA4jTbaK97QKSDjkIoOsKQlfylt/d3kKKi596Qy3NP5XrXJ6fZIC9Q==
   
+  mongo-round@^1.0.0:
+    version "1.0.0"
+    resolved "https://registry.yarnpkg.com/mongo-round/-/mongo-round-1.0.0.tgz#9f22fed68480d61443dca3ebf5587e82c3004193"
+    integrity sha1-nyL+1oSA1hRD3KPr9Vh+gsMAQZM=
+  
   mongodb-connection-string-url@^2.4.1, mongodb-connection-string-url@^2.5.2:
     version "2.5.2"
     resolved "https://registry.npmjs.org/mongodb-connection-string-url/-/mongodb-connection-string-url-2.5.2.tgz"
@@ -4895,7 +4935,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/resolve.exports/-/resolve.exports-1.1.0.tgz#5ce842b94b05146c0e03076985d1d0e7e48c90c9"
     integrity sha512-J1l+Zxxp4XK3LUDZ9m60LRJF/mAe4z6a4xyabPHk7pvK5t35dACV32iIjJDFeWZFfZlO29w6SZ67knR0tHzJtQ==
   
-  resolve@^1.10.1, resolve@^1.20.0:
+  resolve@^1.0.0, resolve@^1.10.1, resolve@^1.20.0:
     version "1.22.0"
     resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.22.0.tgz#5e0b8c67c15df57a89bdbabe603a002f21731198"
     integrity sha512-Hhtrw0nLeSrFQ7phPp4OOcVjLPIeMnRlr5mcnVuMe7M/7eBn98A3hmFRLoFo3DLZkivSYwhRUJTyPyWAk56WLw==
@@ -4928,6 +4968,13 @@ Lockfile:
     version "1.3.0"
     resolved "https://registry.yarnpkg.com/rfdc/-/rfdc-1.3.0.tgz#d0b7c441ab2720d05dc4cf26e01c89631d9da08b"
     integrity sha512-V2hovdzFbOi77/WajaSMXk2OLm+xNIeQdMMuB7icj7bk6zi2F8GGAxigcnDFpJHbNyNcgyJDiP+8nOrY5cZGrA==
+  
+  rimraf@^2.6.1:
+    version "2.7.1"
+    resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.7.1.tgz#35797f13a7fdadc566142c29d4f07ccad483e3ec"
+    integrity sha512-uWjbaKIK3T1OSVptzX7Nl6PvQ3qAGtKEtVRjRuazjfL3Bx5eI409VZSqgND+4UNnmzLVdPj9FqFJNPqBZFve4w==
+    dependencies:
+      glob "^7.1.3"
   
   rimraf@^3.0.0, rimraf@^3.0.2:
     version "3.0.2"
@@ -5114,7 +5161,7 @@ Lockfile:
       ip "^1.1.5"
       smart-buffer "^4.2.0"
   
-  source-map-support@^0.5.6:
+  source-map-support@^0.5.12, source-map-support@^0.5.17, source-map-support@^0.5.6:
     version "0.5.21"
     resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.21.tgz#04fe7c7f9e1ed2d662233c28cb2b35b9f63f6e4f"
     integrity sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w==
@@ -5259,15 +5306,15 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/strip-final-newline/-/strip-final-newline-2.0.0.tgz#89b852fb2fcbe936f6f4b3187afb0a12c1ab58ad"
     integrity sha512-BrpvfNAE3dcvq7ll3xVumzjKjZQ5tI1sEUIKr3Uoks0XUl45St3FlatVqef9prk4jRDzhW6WZg+3bk93y6pLjA==
   
+  strip-json-comments@^2.0.0, strip-json-comments@~2.0.1:
+    version "2.0.1"
+    resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
+    integrity sha1-PFMZQukIwml8DsNEhYwobHygpgo=
+  
   strip-json-comments@^3.1.0, strip-json-comments@^3.1.1:
     version "3.1.1"
     resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-3.1.1.tgz#31f1281b3832630434831c310c01cccda8cbe006"
     integrity sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==
-  
-  strip-json-comments@~2.0.1:
-    version "2.0.1"
-    resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
-    integrity sha1-PFMZQukIwml8DsNEhYwobHygpgo=
   
   superagent@^7.1.0:
     version "7.1.1"
@@ -5327,6 +5374,18 @@ Lockfile:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
     integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
+  
+  swagger-ui-dist@>=4.1.3:
+    version "4.10.3"
+    resolved "https://registry.yarnpkg.com/swagger-ui-dist/-/swagger-ui-dist-4.10.3.tgz#d67066716ce20cb6afb23474c9ca2727633a9eb3"
+    integrity sha512-eR4vsd7sYo0Sx7ZKRP5Z04yij7JkNmIlUQfrDQgC+xO5ABYx+waabzN+nDsQTLAJ4Z04bjkRd8xqkJtbxr3G7w==
+  
+  swagger-ui-express@^4.3.0:
+    version "4.3.0"
+    resolved "https://registry.yarnpkg.com/swagger-ui-express/-/swagger-ui-express-4.3.0.tgz#226238ab231f7718f9109d63a66efc3a795618dd"
+    integrity sha512-jN46SEEe9EoXa3ZgZoKgnSF6z0w3tnM1yqhO4Y+Q4iZVc8JOQB960EZpIAz6rNROrDApVDwcMHR0mhlnc/5Omw==
+    dependencies:
+      swagger-ui-dist ">=4.1.3"
   
   symbol-tree@^3.2.4:
     version "3.2.4"
@@ -5476,6 +5535,11 @@ Lockfile:
     resolved "https://registry.npmjs.org/tr46/-/tr46-0.0.3.tgz"
     integrity sha1-gYT9NH2snNwYWZLzpmIuFLnZq2o=
   
+  tree-kill@^1.2.2:
+    version "1.2.2"
+    resolved "https://registry.yarnpkg.com/tree-kill/-/tree-kill-1.2.2.tgz#4ca09a9092c88b73a7cdc5e8a01b507b0790a0cc"
+    integrity sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==
+  
   ts-jest@^27.0.5:
     version "27.1.3"
     resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-27.1.3.tgz#1f723e7e74027c4da92c0ffbd73287e8af2b2957"
@@ -5489,6 +5553,22 @@ Lockfile:
       make-error "1.x"
       semver "7.x"
       yargs-parser "20.x"
+  
+  ts-node-dev@^1.1.8:
+    version "1.1.8"
+    resolved "https://registry.yarnpkg.com/ts-node-dev/-/ts-node-dev-1.1.8.tgz#95520d8ab9d45fffa854d6668e2f8f9286241066"
+    integrity sha512-Q/m3vEwzYwLZKmV6/0VlFxcZzVV/xcgOt+Tx/VjaaRHyiBcFlV0541yrT09QjzzCxlDZ34OzKjrFAynlmtflEg==
+    dependencies:
+      chokidar "^3.5.1"
+      dynamic-dedupe "^0.3.0"
+      minimist "^1.2.5"
+      mkdirp "^1.0.4"
+      resolve "^1.0.0"
+      rimraf "^2.6.1"
+      source-map-support "^0.5.12"
+      tree-kill "^1.2.2"
+      ts-node "^9.0.0"
+      tsconfig "^7.0.0"
   
   ts-node@^10.2.1:
     version "10.7.0"
@@ -5509,6 +5589,18 @@ Lockfile:
       v8-compile-cache-lib "^3.0.0"
       yn "3.1.1"
   
+  ts-node@^9.0.0:
+    version "9.1.1"
+    resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-9.1.1.tgz#51a9a450a3e959401bda5f004a72d54b936d376d"
+    integrity sha512-hPlt7ZACERQGf03M253ytLY3dHbGNGrAq9qIHWUY9XHYl1z7wYngSr3OQ5xmui8o2AaxsONxIzjafLUiWBo1Fg==
+    dependencies:
+      arg "^4.1.0"
+      create-require "^1.1.0"
+      diff "^4.0.1"
+      make-error "^1.1.1"
+      source-map-support "^0.5.17"
+      yn "3.1.1"
+  
   tsconfig-paths@^3.12.0:
     version "3.14.0"
     resolved "https://registry.yarnpkg.com/tsconfig-paths/-/tsconfig-paths-3.14.0.tgz#4fcc48f9ccea8826c41b9ca093479de7f5018976"
@@ -5518,6 +5610,16 @@ Lockfile:
       json5 "^1.0.1"
       minimist "^1.2.0"
       strip-bom "^3.0.0"
+  
+  tsconfig@^7.0.0:
+    version "7.0.0"
+    resolved "https://registry.yarnpkg.com/tsconfig/-/tsconfig-7.0.0.tgz#84538875a4dc216e5c4a5432b3a4dec3d54e91b7"
+    integrity sha512-vZXmzPrL+EmC4T/4rVlT2jNVMWCi/O4DIiSj3UHg1OE5kCKbk4mfrXc6dZksLgRM/TZlKnousKH9bbTazUWRRw==
+    dependencies:
+      "@types/strip-bom" "^3.0.0"
+      "@types/strip-json-comments" "0.0.30"
+      strip-bom "^3.0.0"
+      strip-json-comments "^2.0.0"
   
   tslib@^1.8.1:
     version "1.14.1"
@@ -5893,6 +5995,11 @@ Lockfile:
     version "2.2.0"
     resolved "https://registry.yarnpkg.com/xmlchars/-/xmlchars-2.2.0.tgz#060fe1bcb7f9c76fe2a17db86a9bc3ab894210cb"
     integrity sha512-JZnDKK8B0RCDw84FNdDAIpZK+JuJw+s7Lz8nksI7SIuU3UXJJslUthsi+uWBUYOwPFwW7W7PRLRfUKpxjtjFCw==
+  
+  xtend@^4.0.0:
+    version "4.0.2"
+    resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.2.tgz#bb72779f5fa465186b1f438f674fa347fdb5db54"
+    integrity sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==
   
   y18n@^5.0.5:
     version "5.0.8"
