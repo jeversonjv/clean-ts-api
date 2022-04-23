@@ -71,16 +71,19 @@ describe('Survey Mongo Repository', () => {
         makeAccount()
       ])
 
-      const surveyResult = await sut.save({
+      await sut.save({
         surveyId,
         accountId,
         answer: firstAnswer,
         date: new Date()
       })
 
+      const surveyResult = await surveyResultCollection.findOne({
+        surveyId: new ObjectId(surveyId),
+        accountId: new ObjectId(accountId)
+      })
+
       expect(surveyResult).toBeTruthy()
-      expect(surveyResult.answers[0].answer).toBe(firstAnswer)
-      expect(surveyResult.answers[0].count).toBe(1)
     })
 
     test('Should update survey result if its not new', async () => {
@@ -98,16 +101,22 @@ describe('Survey Mongo Repository', () => {
         date: new Date()
       })
 
-      const surveyResult = await sut.save({
+      await sut.save({
         surveyId,
         accountId,
         answer: secondAnswer,
         date: new Date()
       })
 
+      const surveyResult = await surveyResultCollection
+        .find({
+          surveyId: new ObjectId(surveyId),
+          accountId: new ObjectId(accountId)
+        })
+        .toArray()
+
       expect(surveyResult).toBeTruthy()
-      expect(surveyResult.answers[0].answer).toBe(secondAnswer)
-      expect(surveyResult.answers[0].count).toBe(1)
+      expect(surveyResult.length).toBe(1)
     })
   })
 
