@@ -8,16 +8,26 @@ import {
 export class DbLoadSurveyResult implements LoadSurveyResult {
   constructor(
     private readonly loadSurveyResultRepository: LoadSurveyResultRepository,
-    private readonly loadSurveyByIdRepository?: LoadSurveyByIdRepository
+    private readonly loadSurveyByIdRepository: LoadSurveyByIdRepository
   ) {}
 
   async load(surveyId: string): Promise<SurveyResultModel> {
-    const surveyResult = await this.loadSurveyResultRepository.loadBySurveyId(
+    let surveyResult = await this.loadSurveyResultRepository.loadBySurveyId(
       surveyId
     )
 
     if (!surveyResult) {
-      await this.loadSurveyByIdRepository?.loadById(surveyId)
+      const survey = await this.loadSurveyByIdRepository.loadById(surveyId)
+      surveyResult = {
+        surveyId,
+        question: survey.question,
+        date: survey.date,
+        answers: survey.answers.map((answer) => ({
+          ...answer,
+          count: 0,
+          percent: 0
+        }))
+      }
     }
 
     return surveyResult

@@ -9,11 +9,11 @@ import {
 export class DbSaveSurveyResult implements SaveSurveyResult {
   constructor(
     private readonly saveSurveyResultRepository: SaveSurveyResultRepository,
-    private readonly loadSurveyResultRepository?: LoadSurveyResultRepository
+    private readonly loadSurveyResultRepository: LoadSurveyResultRepository
   ) {}
 
   async save(data: SaveSurveyResultParams): Promise<SurveyResultModel> {
     await this.saveSurveyResultRepository.save(data)
-    return this.loadSurveyResultRepository?.loadBySurveyId(data.surveyId)
+    return this.loadSurveyResultRepository.loadBySurveyId(data.surveyId)
   }
 }
